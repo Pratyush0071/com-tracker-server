@@ -1,26 +1,26 @@
 import { Router } from 'express';
 import type { Response } from 'express';
 import mongoose from 'mongoose';
-import { requireAuth, requireRole } from '../middleware/auth.ts';
-import type { AuthRequest } from '../middleware/auth.ts';
-import { EmployeeProfile } from '../models/EmployeeProfile.ts';
-import { SalesEntry } from '../models/SalesEntry.ts';
-import { IncentiveTransaction } from '../models/IncentiveTransaction.ts';
-import { Notification } from '../models/Notification.ts';
-import { TargetAchievement } from '../models/TargetAchievement.ts';
+import { requireAuth, requireRole } from '../middleware/auth.js';
+import type { AuthRequest } from '../middleware/auth.js';
+import { EmployeeProfile } from '../models/EmployeeProfile.js';
+import { SalesEntry } from '../models/SalesEntry.js';
+import { IncentiveTransaction } from '../models/IncentiveTransaction.js';
+import { Notification } from '../models/Notification.js';
+import { TargetAchievement } from '../models/TargetAchievement.js';
 import {
   computeTargetProgress,
   ensureActiveCycleForEmployee,
   getOrCreateSystemSettings,
-} from '../services/cycleService.ts';
+} from '../services/cycleService.js';
 import {
   createSalesEntryForEmployee,
   deleteSalesEntry,
   editSalesEntry,
-} from '../services/financialService.ts';
-import { buildSalesEntriesWorkbook } from '../services/excelService.ts';
-import { rupeesToPaise } from '../utils/money.ts';
-import { getISTParts } from '../utils/timezone.ts';
+} from '../services/financialService.js';
+import { buildSalesEntriesWorkbook } from '../services/excelService.js';
+import { rupeesToPaise } from '../utils/money.js';
+import { getISTParts } from '../utils/timezone.js';
 
 const router = Router();
 

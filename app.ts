@@ -1,12 +1,12 @@
 import express from 'express';
 import cors from 'cors';
-import { apiLimiter } from './middleware/rateLimit.ts';
-import { sanitizeInput } from './middleware/sanitize.ts';
-import { errorHandler } from './middleware/errorHandler.ts';
-import authRoutes from './routes/authRoutes.ts';
-import employeeRoutes from './routes/employeeRoutes.ts';
-import adminRoutes from './routes/adminRoutes.ts';
-import { env } from './config/env.ts';
+import { apiLimiter } from './middleware/rateLimit.js';
+import { sanitizeInput } from './middleware/sanitize.js';
+import { errorHandler } from './middleware/errorHandler.js';
+import authRoutes from './routes/authRoutes.js';
+import employeeRoutes from './routes/employeeRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
+import { env } from './config/env.js';
 
 export function createExpressApp() {
   const app = express();

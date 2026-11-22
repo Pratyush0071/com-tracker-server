@@ -1,5 +1,5 @@
 import type { ClientSession, Types } from 'mongoose';
-import { AuditLog } from '../models/AuditLog.ts';
+import { AuditLog } from '../models/AuditLog.js';
 
 export interface AuditParams {
   actorId: Types.ObjectId | string;

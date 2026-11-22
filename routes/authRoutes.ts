@@ -1,14 +1,14 @@
 import { Router } from 'express';
 import type { Response } from 'express';
 import bcrypt from 'bcryptjs';
-import { User } from '../models/User.ts';
-import { EmployeeProfile } from '../models/EmployeeProfile.ts';
-import { Notification } from '../models/Notification.ts';
-import { requireAuth, signAuthToken } from '../middleware/auth.ts';
-import type { AuthRequest } from '../middleware/auth.ts';
-import { loginLimiter } from '../middleware/rateLimit.ts';
-import { getOrCreateSystemSettings } from '../services/cycleService.ts';
-import { recordAuditLog } from '../services/auditService.ts';
+import { User } from '../models/User.js';
+import { EmployeeProfile } from '../models/EmployeeProfile.js';
+import { Notification } from '../models/Notification.js';
+import { requireAuth, signAuthToken } from '../middleware/auth.js';
+import type { AuthRequest } from '../middleware/auth.js';
+import { loginLimiter } from '../middleware/rateLimit.js';
+import { getOrCreateSystemSettings } from '../services/cycleService.js';
+import { recordAuditLog } from '../services/auditService.js';
 
 const router = Router();
 

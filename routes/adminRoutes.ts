@@ -2,25 +2,25 @@ import { Router } from 'express';
 import type { Response } from 'express';
 import bcrypt from 'bcryptjs';
 import mongoose from 'mongoose';
-import { requireAuth, requireRole } from '../middleware/auth.ts';
-import type { AuthRequest } from '../middleware/auth.ts';
-import { User } from '../models/User.ts';
-import { EmployeeProfile } from '../models/EmployeeProfile.ts';
-import { SalesEntry } from '../models/SalesEntry.ts';
-import { TargetCycle } from '../models/TargetCycle.ts';
-import { TargetAchievement } from '../models/TargetAchievement.ts';
-import { CommissionTransaction } from '../models/CommissionTransaction.ts';
-import { IncentiveTransaction } from '../models/IncentiveTransaction.ts';
-import { Withdrawal } from '../models/Withdrawal.ts';
-import { Notification } from '../models/Notification.ts';
-import { AuditLog } from '../models/AuditLog.ts';
+import { requireAuth, requireRole } from '../middleware/auth.js';
+import type { AuthRequest } from '../middleware/auth.js';
+import { User } from '../models/User.js';
+import { EmployeeProfile } from '../models/EmployeeProfile.js';
+import { SalesEntry } from '../models/SalesEntry.js';
+import { TargetCycle } from '../models/TargetCycle.js';
+import { TargetAchievement } from '../models/TargetAchievement.js';
+import { CommissionTransaction } from '../models/CommissionTransaction.js';
+import { IncentiveTransaction } from '../models/IncentiveTransaction.js';
+import { Withdrawal } from '../models/Withdrawal.js';
+import { Notification } from '../models/Notification.js';
+import { AuditLog } from '../models/AuditLog.js';
 import {
   computeTargetProgress,
   ensureActiveCycleForEmployee,
   getOrCreateSystemSettings,
   getOrCreateTargetConfig,
   updateEmployeeTargetCycle,
-} from '../services/cycleService.ts';
+} from '../services/cycleService.js';
 import {
   approveDirectPayout,
   approveWithdrawal,
@@ -32,22 +32,22 @@ import {
   grantIncentive,
   markWithdrawalPaid,
   rejectWithdrawal,
-} from '../services/financialService.ts';
-import { createNotification } from '../services/notificationService.ts';
-import { recordAuditLog } from '../services/auditService.ts';
+} from '../services/financialService.js';
+import { createNotification } from '../services/notificationService.js';
+import { recordAuditLog } from '../services/auditService.js';
 import {
   buildAllEmployeesCompanyWorkbook,
   buildIndividualEmployeeWorkbook,
   buildSalesEntriesWorkbook,
-} from '../services/excelService.ts';
-import { rupeesToPaise } from '../utils/money.ts';
+} from '../services/excelService.js';
+import { rupeesToPaise } from '../utils/money.js';
 import {
   getCalendarMonthRangeIST,
   getCycleBoundsForDate,
   getISTParts,
   getThisWeekStartISTDateStr,
   getYesterdayISTDateStr,
-} from '../utils/timezone.ts';
+} from '../utils/timezone.js';
 
 const router = Router();
 

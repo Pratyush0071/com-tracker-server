@@ -1,5 +1,5 @@
 import ExcelJS from 'exceljs';
-import { paiseToRupees } from '../utils/money.ts';
+import { paiseToRupees } from '../utils/money.js';
 
 const INR_CURRENCY_FORMAT = '"₹"#,##,##0.00';
 

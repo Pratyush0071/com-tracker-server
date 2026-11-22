@@ -1,25 +1,25 @@
 import type { Types } from 'mongoose';
-import { runInTransaction } from '../config/db.ts';
-import { EmployeeProfile } from '../models/EmployeeProfile.ts';
-import type { IEmployeeProfile } from '../models/EmployeeProfile.ts';
-import { SalesEntry } from '../models/SalesEntry.ts';
-import { CommissionTransaction } from '../models/CommissionTransaction.ts';
-import { IncentiveTransaction } from '../models/IncentiveTransaction.ts';
-import { TargetAchievement } from '../models/TargetAchievement.ts';
-import { TargetCycle } from '../models/TargetCycle.ts';
-import type { ITargetCycle } from '../models/TargetCycle.ts';
-import { Withdrawal } from '../models/Withdrawal.ts';
-import { Notification } from '../models/Notification.ts';
-import { User } from '../models/User.ts';
+import { runInTransaction } from '../config/db.js';
+import { EmployeeProfile } from '../models/EmployeeProfile.js';
+import type { IEmployeeProfile } from '../models/EmployeeProfile.js';
+import { SalesEntry } from '../models/SalesEntry.js';
+import { CommissionTransaction } from '../models/CommissionTransaction.js';
+import { IncentiveTransaction } from '../models/IncentiveTransaction.js';
+import { TargetAchievement } from '../models/TargetAchievement.js';
+import { TargetCycle } from '../models/TargetCycle.js';
+import type { ITargetCycle } from '../models/TargetCycle.js';
+import { Withdrawal } from '../models/Withdrawal.js';
+import { Notification } from '../models/Notification.js';
+import { User } from '../models/User.js';
 import {
   computeTargetProgress,
   ensureActiveCycleForEmployee,
   getOrCreateSystemSettings,
-} from './cycleService.ts';
-import { createNotification } from './notificationService.ts';
-import { recordAuditLog } from './auditService.ts';
-import { calculateCommissionPaise, formatINRFromPaise } from '../utils/money.ts';
-import { getISTParts, parseISTDateStart } from '../utils/timezone.ts';
+} from './cycleService.js';
+import { createNotification } from './notificationService.js';
+import { recordAuditLog } from './auditService.js';
+import { calculateCommissionPaise, formatINRFromPaise } from '../utils/money.js';
+import { getISTParts, parseISTDateStart } from '../utils/timezone.js';
 
 export function computeAvailableBalancePaise(profile: Pick<
   IEmployeeProfile,

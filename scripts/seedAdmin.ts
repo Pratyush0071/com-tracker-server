@@ -1,8 +1,8 @@
 import bcrypt from 'bcryptjs';
-import { connectDatabase, disconnectDatabase } from '../config/db.ts';
-import { env } from '../config/env.ts';
-import { User } from '../models/User.ts';
-import { getOrCreateSystemSettings, getOrCreateTargetConfig } from '../services/cycleService.ts';
+import { connectDatabase, disconnectDatabase } from '../config/db.js';
+import { env } from '../config/env.js';
+import { User } from '../models/User.js';
+import { getOrCreateSystemSettings, getOrCreateTargetConfig } from '../services/cycleService.js';
 
 async function run() {
   const username = (process.argv[2] || env.adminUsername || 'admin').toLowerCase();

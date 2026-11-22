@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch index.ts",
+     "build": "tsc",
     "start": "tsx index.ts",
     "seed:admin": "tsx scripts/seedAdmin.ts",
     "lint": "tsc --noEmit"

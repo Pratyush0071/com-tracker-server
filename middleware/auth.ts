@@ -1,8 +1,8 @@
 import type { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { env } from '../config/env.ts';
-import { User } from '../models/User.ts';
-import type { UserRole } from '../models/User.ts';
+import { env } from '../config/env.js';
+import { User } from '../models/User.js';
+import type { UserRole } from '../models/User.js';
 
 export interface AuthUserPayload {
   userId: string;

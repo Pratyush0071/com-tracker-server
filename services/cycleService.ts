@@ -1,18 +1,18 @@
 import type { ClientSession, Types } from 'mongoose';
-import { TargetCycle } from '../models/TargetCycle.ts';
-import type { ITargetCycle, ICycleMilestoneSnapshot } from '../models/TargetCycle.ts';
-import { TargetConfiguration } from '../models/TargetConfiguration.ts';
-import { EmployeeProfile } from '../models/EmployeeProfile.ts';
-import { SalesEntry } from '../models/SalesEntry.ts';
-import { SystemSetting } from '../models/SystemSetting.ts';
-import { createNotification } from './notificationService.ts';
+import { TargetCycle } from '../models/TargetCycle.js';
+import type { ITargetCycle, ICycleMilestoneSnapshot } from '../models/TargetCycle.js';
+import { TargetConfiguration } from '../models/TargetConfiguration.js';
+import { EmployeeProfile } from '../models/EmployeeProfile.js';
+import { SalesEntry } from '../models/SalesEntry.js';
+import { SystemSetting } from '../models/SystemSetting.js';
+import { createNotification } from './notificationService.js';
 import {
   formatISTDateLabel,
   getCycleBoundsForDate,
   getISTParts,
   getRemainingDaysInCycle,
   parseISTDateStart,
-} from '../utils/timezone.ts';
+} from '../utils/timezone.js';
 
 export async function getOrCreateSystemSettings(session?: ClientSession | null) {
   let settings = await SystemSetting.findOne({ key: 'global' }).session(session || null);

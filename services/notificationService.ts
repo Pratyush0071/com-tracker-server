@@ -1,5 +1,5 @@
 import type { ClientSession, Types } from 'mongoose';
-import { Notification } from '../models/Notification.ts';
+import { Notification } from '../models/Notification.js';
 
 export interface CreateNotificationParams {
   recipientId?: Types.ObjectId | string;

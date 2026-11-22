@@ -1,9 +1,9 @@
 import express from 'express';
-import { connectDatabase } from './config/db.ts';
-import { env } from './config/env.ts';
-import { createExpressApp } from './app.ts';
-import { bootstrapSystemDefaults } from './services/seedService.ts';
-import { syncAllEmployeeCycles } from './services/cycleService.ts';
+import { connectDatabase } from './config/db.js';
+import { env } from './config/env.js';
+import { createExpressApp } from './app.js';
+import { bootstrapSystemDefaults } from './services/seedService.js';
+import { syncAllEmployeeCycles } from './services/cycleService.js';
 
 async function startStandaloneApiServer() {
   const port = Number(process.env.PORT || 5000);

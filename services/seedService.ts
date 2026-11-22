@@ -1,9 +1,9 @@
 import crypto from 'crypto';
 import bcrypt from 'bcryptjs';
-import { User } from '../models/User.ts';
-import { SystemSetting } from '../models/SystemSetting.ts';
-import { getOrCreateSystemSettings, getOrCreateTargetConfig } from './cycleService.ts';
-import { env, setRuntimeJwtSecret } from '../config/env.ts';
+import { User } from '../models/User.js';
+import { SystemSetting } from '../models/SystemSetting.js';
+import { getOrCreateSystemSettings, getOrCreateTargetConfig } from './cycleService.js';
+import { env, setRuntimeJwtSecret } from '../config/env.js';
 
 export async function bootstrapSystemDefaults(): Promise<void> {
   await getOrCreateSystemSettings();

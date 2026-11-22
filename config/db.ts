@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 import type { ClientSession } from 'mongoose';
 import type { MongoMemoryReplSet as MongoMemoryReplSetType } from 'mongodb-memory-server';
-import { env } from './env.ts';
+import { env } from './env.js';
 
 let memoryReplSet: MongoMemoryReplSetType | null = null;
 let transactionsSupported = true;
